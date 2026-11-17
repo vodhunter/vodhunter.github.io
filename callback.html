@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connected · VODHunter</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><a class="brand" href="index.html">VODHunter</a></header>
+<h1 id="h">Almost done</h1>
+<p id="p">Copy the full address of this page and send it to the VODHunter bot in Telegram.</p>
+<p><button id="b" type="button">Copy address</button></p>
+<p class="meta" id="u" style="word-break:break-all"></p>
+<script>
+const u=location.href; document.getElementById('u').textContent=u;
+if(!/[?&]code=/.test(u)){document.getElementById('h').textContent='No code found';document.getElementById('p').textContent='This page is only used after connecting an account.';}
+document.getElementById('b').onclick=async()=>{try{await navigator.clipboard.writeText(u);document.getElementById('b').textContent='Copied';}catch(e){getSelection().selectAllChildren(document.getElementById('u'));}};
+</script>
+</main></body></html>
